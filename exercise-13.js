@@ -1,22 +1,36 @@
 function sorting(arrNumber) {
-  var arrsort =  arrNumber.sort()
-  return arrsort
+  var isSorted = false
+  while(isSorted==false){
+      isSorted=true
+      for(var i=0; i<arrNumber.length; i++){
+          if(arrNumber[i-1]>arrNumber[i]){
+              isSorted=false
+              var arrTemp = arrNumber[i-1]
+              arrNumber[i-1] = arrNumber[i]
+              arrNumber[i] = arrTemp
+          }
+      }
+  }
+
+  return arrNumber
+
+  
 }
 
 function getTotal(arrNumber) {
   arrTotal = sorting(arrNumber)
   count = 0
   angkaTerbesar = arrTotal[arrTotal.length-1]
-  for ( var i=0; i<arrTotal.length; i++ ) {
-      if(arrTotal[i]==angkaTerbesar){
-          count++
-      }
+    for ( var i=0; i<arrTotal.length; i++ ) {
+        if(arrTotal[i]==angkaTerbesar){
+            count++
+        }
 
-  }if(angkaTerbesar===undefined){
-      return  " "
-  }else {
-      return "angka paling besar adalah "  + angkaTerbesar+ " dan jumlah kemunculan sebanyak " + count + " Kali."
-  }
+    }if(angkaTerbesar===undefined){
+        return  " "
+    }else {
+        return "angka paling besar adalah "  + angkaTerbesar+ " dan jumlah kemunculan sebanyak " + count + " Kali."
+    }
 
 }
 
