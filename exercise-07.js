@@ -1,10 +1,5 @@
 function hapusSimbol(str) {
-    var output = ""
-  for(var i=0; i<str.length; i++ ){
-      if(str[i].match(/[a-z]/gi) || str[i].match(/[0-9/]/)){
-          output = output + str[i]
-      }
-  }
+    var output = str.replace(/[^a-z&&^0-9]/g,"")
   return output
 }
 
